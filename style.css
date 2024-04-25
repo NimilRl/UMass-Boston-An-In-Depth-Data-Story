@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.animation-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.content-section #sunbrust {
+  svg {
+    height: 800px;
+    margin-right: 5%;
+  }
+}
+
+.page {
+  height: 400vh;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.content-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.content-section .info{
+  width: 40%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  text-align: left;
+  font-family: sans-serif;
+  padding-right: 5%;
+  margin-left: 5%;
+}
+
+.content-section:nth-child(1) {
+  background-color: #6bacd3;
+}
+
+.content-section:nth-child(2) {
+  background-color: #e8e8e8;
+}
+
+.content-section:nth-child(3) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(4) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(5) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(6) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(7) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(8) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(9) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(10) {
+  background-color: #e8e8e8;
+}
+.content-section:nth-child(11) {
+  background-color: #6bacd3;
+}
+
+.content-section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  text-align: left;
+}
+
+h1 {
+  padding: 0;
+  margin: .5em 0;
+}
+
+p {
+  padding: 0;
+  margin: .25em 0;
+}
+
+a {
+  color: black;
+}
+
+.arrow-animated {
+  font-size: 35px;
+  animation: arrow-float 1s infinite;
+}
+
+@keyframes arrow-float {
+  0% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+  }
+  60% {
+      transform: translateY(50%);
+      animation-timing-function: ease-in-out;
+  }
+  100% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+  }
+}
+
+.bar { fill: steelblue; }
+.bar:hover { fill: orange; }
+.axis path, .axis line { fill: none; stroke: #000; shape-rendering: crispEdges; }
+
+#svg1 {
+  width: 80vw;
+  height: 80vh;
+}
+
+
+.slider {
+  margin: 10px;
+  width: 300px;
+}
+
+
+
+
+.bar2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+.chart-info{
+  margin-bottom:10%;
+  text-align: left;
+}
+
+svg.nimil {
+  width: 80vw;
+  height: 80vh;
+}
+
+.content-section .sec-sec{
+  width: 1400px;
+  padding-left: 5%;
+  margin-right: 100v;
+}
+
+
+.button-39 {
+  background-color: #e8e8e8;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-39:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-39:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-39:focus-visible {
+  box-shadow: none;
+}
+
+select {
+  width: 200px;  /* Adjust width to fit your layout */
+  padding: 8px 12px; /* Padding for better touch interaction */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: white; /* White background */
+  box-shadow: none; /* No shadow for a cleaner look */
+  font-size: 16px; /* Comfortable font size */
+  color: #333; /* Dark gray text color for better readability */
+  appearance: none; /* Removes default system styling */
+  cursor: pointer; /* Cursor indicates it’s clickable */
+}
+
+/* Style for options inside the dropdown */
+option {
+  padding: 8px; /* Adds spacing around text */
+}
+
+/* Custom arrow using a background image for the select element */
+select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048"><path d="M2048 512l-1024 1024L0 512h2048z" fill="%23000"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Arrow position */
+  background-size: 12px; /* Arrow size */
+}

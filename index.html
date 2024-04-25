@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UMB Faculty Salary + RateMyProfessor data Analysis</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script> <!-- Make sure this line is included -->
+
+
+    <script src="data_scripts/piechart.js"></script>
+    <script src="data_scripts/splom.js"></script>
+    <script src="data_scripts/stogbar.js"></script>
+    <script src="data_scripts/sortable_bar.js"></script>
+    <!-- <script src="data_scripts/hexbin.js"></script> -->
+    <script src="data_scripts/circlepacking.js"></script>
+    <script src="data_scripts/sunburst.js"></script>
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="page"></div>
+
+    <div class="content">
+        <div class="content-section">
+            <div>
+                <h1 style="font-size: 100px;">UMass Boston</h1>
+                <p style="font-size: 50px;">
+                    An In-Depth Data Story 📖
+                </p>
+                <p class="arrow-animated">↓</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div>
+                <h1>Exploring UMass Boston's Employment Ecosystem ➡️</h1>
+                <p>Welcome to a snapshot of UMass Boston, a place where diverse roles come together to form a vibrant
+                    academic community.<br> Let's delve into the data and discover what it reveals about the people who
+                    contribute their skills and knowledge to this institution.</p>
+
+                <p>Within our data, we find the structure of the university's payroll, telling us more than just
+                    numbers—it shows us the commitment to rewarding the hard work of its staff.</p>
+
+                <p>Take a glance at the payroll data from UMass Boston, revealing insights into the distribution of
+                    salaries across different roles and departments. The data highlights:</p>
+
+                <ul>
+                    <li><strong>Salaries</strong>: A varied range with an average annual pay of approximately $72,354.
+                    </li>
+                    <li><strong>Common Roles</strong>: Many are educators, with 'Associate Lecturer' being the most
+                        frequent title.</li>
+                    <li><strong>Extra Earnings</strong>: A notable segment of the workforce receives additional pay
+                        beyond their salary.</li>
+                    <li><strong>Performance Ratings</strong>: Performance is recognized, with a sizeable number
+                        receiving the top rating.</li>
+                </ul>
+                <p></p>
+            </div>
+        </div>
+
+
+
+        <div class="content-section">
+            <div class="info">
+                <h1>Salary Analysis by Position and Department 🤔</h1>
+                <p>Zoomable Sunburst & Circle Packing Graphs <br><br>
+                    Explore the complexity of salary distribution across various departments and positions with
+                    interactive Zoomable Sunburst and Circle Packing Graphs. These visualizations offer insights into
+                    the top 20 salary categories, with the option to delve deeper into each sector, providing a
+                    transparent view of UMass Boston's compensation landscape.
+                </p>
+                <p><strong>click on any department to view details.</strong></p>
+            </div>
+
+            <div class="chart-container" id="sunbrust"></div>
+        </div>
+
+        <div class="content-section">
+            <div class="info">
+                <h1>Zoomable Circle Packing Graphs 💡</h1>
+                <p>The zoomable circle packing graph would display UMass Boston's departments as nested circles,
+                    with each circle's size reflecting a department's total payroll or headcount.
+                    you could click on a department to zoom in and see individual roles or salary ranges, providing an
+                    intuitive view of the university’s structure.</p>
+                    <strong>click on any circle to view details.</strong>
+            </div>
+
+            <div class="chart-container" id="circle-packing"></div>
+        </div>
+        <div class="content-section">
+            <div class="info">
+                <h1>Performance Evaluation
+                    Analysis 😎</h1>
+
+                <ul>
+                    <li> What if we told you that performance could be a treasure map?
+                    </li>
+                    <li>
+                        <p>Our  <strong>Scatterplot Matrix</strong> is the map that marks the spots where performance and pay intersect.
+                            Follow the dots to uncover the tales of reward and recognition.</p>
+                    </li>
+                    <li><p>correlations between performance ratings, total pay, and the number of ratings received with our Scatterplot Matrix. This matrix reveals intriguing patterns, suggesting relationships between performance and compensation, and allows for an interactive experience to understand how various factors intersect.</p>
+                    </li>
+                    
+                </ul>
+                <strong>select points in any box to see co releted point in others ...</strong>
+                <p></p>
+            </div>
+
+            <div class="chart-container" id="splom"></div>
+        </div>
+        <div class="content-section">
+            <div class="info">
+                <h1>Let's see if we can analyze the salary ratios, inequalities, ratings, and engagements. 🧐</h1>
+                
+            </div>
+        </div>
+        <div class="content-section">
+            <div>
+                <div>
+                    <div class="chart-info">
+                        <h1>Departmental Staffing and Salary Distribution 📊</h1>
+                        <p>Think of departments as families, each with its own budget to manage.</p>
+                        <p>Stacked-to-Grouped Bars are like family portraits, showing you who earns what in the UMass Boston household. It’s a visual journey from the broad picture to individual faces.	Examine the staffing levels and salary ranges within each department through our Stacked-to-Grouped Bars visualization. This transitionary graphic presents the number of employees against their respective salary brackets, offering a unique perspective on the allocation of financial resources within different university departments.</p>
+                        <strong>use buttons to change between grouped or stacked.</strong>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="button-39" role="button" onclick="update('grouped')">Grouped</button>
+                    <button class="button-39" role="button" onclick="update('stacked')">Stacked</button>
+                    <div class="chart-container" class="bar2" id="stogbar" style="
+                height: 400px;
+            "></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="content-section">
+            <div>
+                <div>
+                    <div class="chart-info">
+                        <h1>Impact of Additional Pay 📈</h1>
+                        <p>Extra pay - is it just a bonus, or is there more to the story?</p>
+                        <p> Sortable Bar Chart to stack, sort, and explore the true role of additional pay. It's not just about what you earn, but what you earn on top of it.</p>
+                        <p>Access the significance of additional pay in total compensation with our Sortable Bar Chart. This interactive tool allows users to reorganize data based on various criteria, highlighting the role of additional pay in the broader context of employee remuneration.</p>
+                    </div>
+
+                </div>
+                <div>
+                    <select id="sortOrder">
+                        <option value="base">BASE PAY</option>
+                        <option value="total">TOTAL PAY</option>
+                        <option value="additional">ADDITIONAL PAY</option>
+                    </select>
+                    <div class="chart-container" id="chart3"></div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="content-section">
+            <div class="chart-info">
+                <h1>Ratings and Employee Engagement 🌟</h1>
+                <p>Ready for a detective story? Ratings and engagement are the clues.</p>
+                <p>Hexbin and Sequences Sunburst will lead you through the maze of interactions and satisfactions. <br>It’s where numbers meet the heart of employee experience. Just click on the button below.
+                    </p>
+                <a href="data_scripts/hexbinsample.html"><button class="button-39" role="button">Hexbin</button></a>
+
+                <!-- HTML !-->
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="content-section">
+            <div class="sec-sec"> <div class="tooltip" id="tooltip"></div>
+            <input type="range" id="radiusSlider" class="slider" min="5" max="30" value="20" step="1">
+            <svg class="nimil"></svg></div>
+            <script>
+                d3.csv("data_scripts/combined_with_departments.csv").then(function(data) {
+                    const processedData = data.map(d => ({
+                        rating: +d.RATING,
+                        numRatings: +d.NUM_RATINGS,
+                        fullName: d.FULL_NAME
+                    }));
+                    initializeChart(processedData);
+                });
+        
+                function initializeChart(data, radius = 20) {
+                    const svg = d3.select("svg.nimil").html(''),
+                          width = +svg.style('width').replace('px', ''),
+                          height = +svg.style('height').replace('px', '');
+        
+                    const margin = {top: 20, right: 30, bottom: 30, left: 40},
+                          x = d3.scaleLinear()
+                              .domain([0, 5]) // Assume ratings are from 0 to 5
+                              .range([margin.left, width - margin.right]),
+                          y = d3.scaleLinear()
+                              .domain([0, d3.max(data, d => d.numRatings)])
+                              .range([height - margin.bottom, margin.top]);
+        
+                    const hexbin = d3.hexbin()
+                        .x(d => x(d.rating))
+                        .y(d => y(d.numRatings))
+                        .radius(radius)
+                        .extent([[margin.left, margin.top], [width - margin.right, height - margin.bottom]]);
+        
+                    const bins = hexbin(data);
+                    const maxBinCount = d3.max(bins, d => d.length);
+                    const minBinCount = d3.min(bins, d => d.length) || 1; // avoid 0 in log scale
+                    const colorScaleDomain = [minBinCount, maxBinCount].map(d => Math.log(d));
+        
+                    const color = d3.scaleSequential(d3.interpolateBuPu)
+                        .domain(colorScaleDomain)
+                        .interpolator(d3.interpolateInferno); // Using a different color scheme
+        
+                    svg.selectAll("path")
+                        .data(bins)
+                        .join("path")
+                        .attr("d", hexbin.hexagon())
+                        .attr("transform", d => `translate(${d.x},${d.y})`)
+                        .attr("fill", d => color(d.length))
+                        .on("mouseover", (event, d) => {
+                            d3.select('#tooltip')
+                                .style('display', 'block')
+                                .html(`Names: ${d.map(bin => bin.fullName).join(', ')}`)
+                                .style('left', `${event.pageX + 10}px`)
+                                .style('top', `${event.pageY + 10}px`);
+                        })
+                        .on("mouseout", () => {
+                            d3.select('#tooltip').style('display', 'none');
+                        });
+        
+                    // Axes
+                    svg.append("g")
+                        .attr("transform", `translate(0,${height - margin.bottom})`)
+                        .call(d3.axisBottom(x).ticks(5))
+                        .attr("class", "axis");
+        
+                    svg.append("g")
+                        .attr("transform", `translate(${margin.left},0)`)
+                        .call(d3.axisLeft(y))
+                        .attr("class", "axis");
+                }
+        
+                document.getElementById('radiusSlider').addEventListener('input', function() {
+                    const currentRadius = +this.value;
+                    d3.csv("data_scripts/combined_with_departments.csv").then(function(data) {
+                        const processedData = data.map(d => ({
+                            rating: +d.RATING,
+                            numRatings: +d.NUM_RATINGS,
+                            fullName: d.FULL_NAME
+                        }));
+                        initializeChart(processedData, currentRadius);
+                    });
+                });
+            </script>
+        </div> -->
+
+
+        <div class="content-section">
+            <div class="info">
+                <h1>Let's see some insights that we got .. </h1>
+                <p></p>
+                <form>
+                    <p>
+                        <strong>Top Departments by Salary:</strong> The average salary differs by department, with the 'Provost & Vice Chancellor for Academic Affairs' and the 'College of Management Dean's Office' having the highest average salaries among all departments at UMass Boston.
+                    </p>
+                    <br>
+                    <p>
+                        <strong>Most Common Positions:</strong> The most frequently held positions at the university are 'Associate Lecturer,' 'Associate Professor,' and 'Lecturer.' These titles represent the bulk of the teaching roles at the university.
+                    </p><br>
+                    <p>
+                        <strong>What Does an Average Salary Look Like?:</strong> Across all roles and departments, the average annual rate for a position at UMass Boston is around $72,354. This gives a sense of what employees at the university can expect to earn on average.
+                    </p><br>
+                    <p>
+                        <strong>How Performance is Rated:</strong> The average rating given for performance is around 2.37 out of 5. Interestingly, a large number of ratings are at the extreme end, with the highest rating of 5 being the most common, suggesting that there are many well-regarded employees at the university.
+                    </p><br>
+                    <p>
+                        <strong>Additional Pay:</strong> A small proportion of employees, about 16%, receive additional pay on top of their regular salary, which indicates that while it's not common, there's a significant minority that receives more than their base salary.
+                    </p>
+                </form>
+            </div>
+        </div>
+       
+        <div class="content-section">
+            <div class="info">
+              <h1>Reference used 📚🔗 </h1>
+              <p>
+              <ul>
+                <li><strong>graphs:</strong> <a href="https://observablehq.com/@d3/gallery">https://observablehq.com/@d3/gallery</a></li>
+                <li><strong>online resources:</strong> chatgpt ,Google sites , d3.js documentation</li>
+                <li><strong>Help:</strong> some of my friends and Teaching staff</li>
+              </ul>
+            </p>
+            </div>
+          </div>
+          
+    </div>
+
+    <div class="animation-container">
+        <svg viewBox="0 -10 315 350">
+            <g class="dude" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <g class="leg">
+                    <path class="leg-bottom"
+                        d="M182,317l-10.4-2.8c-2.7-0.7-4.5-3.2-4.4-6c1.7-13,3-27,3.7-42.1c0.8-16.5,0.7-32,0.1-46.1" />
+                    <path d="M171,220l6-60" />
+                </g>
+                <g class="leg">
+                    <path class="leg-bottom"
+                        d="M182,317l-10.2-2.7c-2.8-0.8-4.7-3.4-4.6-6.3c-0.8-13.9-1-29.2-0.2-45.8c0.7-15.2,2.1-29.4,4-42.2" />
+                    <path d="M171,222c0.3-10,4.3-42,5.3-48" />
+                </g>
+
+                <g class="arm">
+                    <path d="M175,75c-0.6,8.7-0.6,18.9,0.8,30.1c0.6,4.6,1.3,8.9,2.2,12.9" />
+                    <path class="arm-bottom" d="M186,175c-0.2-3.1-0.4-6.2-0.7-9.3c-1.5-16.9-4.1-32.9-7.3-47.7" />
+                </g>
+                <g class="arm">
+                    <path d="M178.8,82.2c-1.9,13.1-1.8,25.2-0.8,35.8" />
+                    <path class="arm-bottom" d="M186,175c-2.4-7.6-4.7-16.8-6.3-27.2c-1.6-11.3-2-21.3-1.7-29.8" />
+                </g>
+                <path class="head"
+                    d="M195,14.8c-10.8-5.7-23.9,1.3-28.2,12.4c-4.9,13,6.3,28.4,17.8,29.1c13.2,0.8,22.2-16.1,19.5-26.7c-1.6-6.5-5.2-7.1-5.2-7.1" />
+            </g>
+        </svg>
+    </div>
+    <!-- partial -->
+    <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+    <script src='https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js'></script>
+    <script src="./script.js"></script>
+
+
+
+</body>
+
+</html>
