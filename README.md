@@ -49,7 +49,7 @@ Curious about how we cleaned the data? Take a look at our detailed process in th
 ## References Used 📚🔗
 - **Graphs:** [Observable D3.js Gallery](https://observablehq.com/@d3/gallery)
 - **Online Resources:** ChatGPT, Google Sites, D3.js Documentation
-- **Dataset:** combined_with_departments.csv
+- **Dataset:** [combined_with_departments.csv](https://cs617.org/data/combined_with_departments.csv)
 
 ## Contributors
 - **[Me](https://www.linkedin.com/in/nimil-lathiya/):** Project Lead, Data Analysis, Visualization
