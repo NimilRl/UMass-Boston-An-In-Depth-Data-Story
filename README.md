@@ -1,3 +1,5 @@
+
+https://github.com/NimilRl/UMass-Boston-An-In-Depth-Data-Story/assets/90232167/f56415d9-2513-436a-81ae-c2afa955890a
 # UMass Boston: An In-Depth Data Story 📖
 
 ## Data Story Overview
@@ -30,8 +32,7 @@ Hexbin and Sequences Sunburst visualizations guide you through the interactions 
 
 ## Visual Video
 Check out our visual walkthrough of the interactive graphs and key insights from the project:
-[Uploading bostonindepth.webm…]()
-
+https://github.com/NimilRl/UMass-Boston-An-In-Depth-Data-Story/assets/90232167/99628310-cf53-4ae5-aa41-0cb140ac6dba
 
 ## Tech Stack
 - **Data Visualization:** D3.js
