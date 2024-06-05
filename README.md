@@ -30,7 +30,12 @@ Hexbin and Sequences Sunburst visualizations guide you through the interactions 
 
 ## Visual Video
 Check out our visual walkthrough of the interactive graphs and key insights from the project:
-https://github.com/NimilRl/UMass-Boston-An-In-Depth-Data-Story/assets/90232167/f56415d9-2513-436a-81ae-c2afa955890a
+
+
+
+https://github.com/NimilRl/UMass-Boston-An-In-Depth-Data-Story/assets/90232167/d17f6626-4f5f-4740-a048-4d32af967424
+
+
 
 ## Tech Stack
 - **Data Visualization:** D3.js
